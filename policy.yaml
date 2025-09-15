@@ -1,0 +1,48 @@
+# Meraki Firewall Policy 
+l3_rules:
+  - comment: "Block private RFC1918 to WAN"
+    policy: "deny"
+    protocol: "any"
+    srcCidr: "10.0.0.0/8"
+    destCidr: "any"
+    destPort: "any"
+
+  - comment: "Allow HTTP"
+    policy: "allow"
+    protocol: "tcp"
+    srcCidr: "any"
+    destCidr: "any"
+    destPort: "80"
+
+  - comment: "Allow HTTPS"
+    policy: "allow"
+    protocol: "tcp"
+    srcCidr: "any"
+    destCidr: "any"
+    destPort: "443"
+
+l7_rules:
+  - policy: "deny"
+    type: "applicationCategory"
+    value: "peer-to-peer"
+
+  - policy: "deny"
+    type: "applicationCategory"
+    value: "online-gaming"
+
+  - policy: "deny"
+    type: "applicationCategory"
+    value: "malware"
+
+  - policy: "deny"
+    type: "host"
+    value: "badsite.example.com"
+
+content_filtering:
+  categories:
+    - "Adult content"
+    - "Malware sites"
+    - "Newly seen domains"
+  url_patterns:
+    - "examplephish.com"
+    - "cryptominer.bad"
