@@ -7,6 +7,8 @@ The goal is to show:
 - System monitoring (alerts, webhooks, syslog).
 - Automation via **Postman** and **Python SDK**.
 - Policy-as-code approach (YAML → API push).
+  
+<img width="523" height="520" alt="docs_network-diagram" src="https://github.com/user-attachments/assets/bfd53934-30ad-4d61-9188-700cd329bfd8" />
 
 ---
 
