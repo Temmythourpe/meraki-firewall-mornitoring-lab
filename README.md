@@ -1,4 +1,4 @@
-# Cisco Meraki Firewall & Monitoring Lab
+<img width="1920" height="1080" alt="Screenshot 2025-09-15 161628" src="https://github.com/user-attachments/assets/51d37c52-c435-43f2-97ca-71406f1556fe" /># Cisco Meraki Firewall & Monitoring Lab
 
 ## Project Overview
 This project demonstrates how to configure and monitor enterprise firewalls using the **Cisco Meraki Dashboard**.  
@@ -18,8 +18,9 @@ The goal is to show:
 - Postman (Meraki collections)  
 - Python 3.x + meraki SDK (pip install meraki)  
 - Flask (for webhook receiver)  
-- GitHub for version control & documentation  
-
+- GitHub for version control & documentation
+  
+<img width="1116" height="855" alt="Screenshot 2025-09-15 162037" src="https://github.com/user-attachments/assets/33225d7f-1cd1-4b6c-addc-7374c17a7902" />
 ---
 
 ## Firewall Policy
@@ -34,7 +35,9 @@ See [`policy.yaml`](./policy.yaml) for rules-as-code.
 ## Monitoring
 - **Webhooks**: Alerts sent to a custom Flask receiver.  
 - **Syslog**: Security events forwarded to SIEM (optional: Wazuh).  
-- **Dashboard**: Client/device analytics, event logs, usage trends.  
+- **Dashboard**: Client/device analytics, event logs, usage trends.
+  
+<img width="722" height="364" alt="Screenshot 2025-09-16 152911" src="https://github.com/user-attachments/assets/0ab3b121-bc19-4df6-b277-0b5bb3278f9c" />
 
 ---
 
@@ -43,7 +46,9 @@ See [`policy.yaml`](./policy.yaml) for rules-as-code.
 - **Python**:
   - `scripts/list_assets.py` → enumerate orgs/networks/devices.  
   - `scripts/push_firewall_policy.py` → apply rules from YAML.  
-  - `scripts/export_events.py` → save security events to JSON/CSV.  
+  - `scripts/export_events.py` → save security events to JSON/CSV.
+  
+<img width="1273" height="798" alt="Screenshot 2025-09-16 184138" src="https://github.com/user-attachments/assets/4f551838-85aa-4730-86dc-2ab461639070" />
 
 ## Limitations
 
