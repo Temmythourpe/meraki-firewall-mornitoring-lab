@@ -63,25 +63,25 @@ In a real Meraki environment (or in a Reserved Sandbox), the same automation wou
 
 The Postman collection demonstrates a realistic automation workflow:
 
-Discover
+1. Discover
 
 GET List Organizations → verify available organizations.
 
 GET List Networks → verify available networks.
 
-Configure Firewall Rules
+2. Configure Firewall Rules
 
 PUT Push L3 Firewall Rules → apply L3 rules from policy.yaml.
 
 PUT Push L7 Firewall Rules → apply L7 rules from policy.yaml.
 
-Monitor & Test Events
+3. Monitor & Test Events
 
 POST Send Sample Webhook Event → test the local Flask receiver (app.py).
 
 Verify the events are logged locally in webhook_events.log.
 
-Notes: Due to the Meraki Always-On Sandbox:
+** Notes: Due to the Meraki Always-On Sandbox: **
 
 Firewall write operations return 403 Forbidden (L3 & L7).
 
