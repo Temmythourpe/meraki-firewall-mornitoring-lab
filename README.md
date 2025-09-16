@@ -1,5 +1,3 @@
-<img width="1920" height="1080" alt="Screenshot 2025-09-15 161628" src="https://github.com/user-attachments/assets/51d37c52-c435-43f2-97ca-71406f1556fe" /># Cisco Meraki Firewall & Monitoring Lab
-
 ## Project Overview
 This project demonstrates how to configure and monitor enterprise firewalls using the **Cisco Meraki Dashboard**.  
 The lab was built with the **Meraki DevNet Sandbox** and **Dashboard API**, without requiring physical hardware.  
