@@ -45,3 +45,14 @@ See [`policy.yaml`](./policy.yaml) for rules-as-code.
   - `scripts/push_firewall_policy.py` → apply rules from YAML.  
   - `scripts/export_events.py` → save security events to JSON/CSV.  
 
+## Limitations
+
+This lab was built using the Cisco Meraki DevNet **Always-On Sandbox**.  
+The sandbox allows API authentication and network queries, but write operations (such as updating firewall policies) return `403 Forbidden` because it only gives read only access.  
+
+This is expected behavior for the Always-On environment.  
+In a real Meraki environment (or in a Reserved Sandbox), the same automation would successfully apply the firewall rules.
+
+- Sandbox API is temporary
+- Webhook receiver uses sample events
+- Scripts demonstrate automation and policy-as-code workflow

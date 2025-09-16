@@ -8,6 +8,10 @@ import meraki
 import yaml
 import os
 import sys
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # ----------------------------
 # Load config
@@ -28,6 +32,10 @@ with open("policy.yaml", "r") as f:
 l3_rules = policy.get("l3_rules", [])
 l7_rules = policy.get("l7_rules", [])
 
+# DEBUG PRINTS
+print("DEBUG: Loaded L3 rules:", l3_rules)
+print("DEBUG: Loaded L7 rules:", l7_rules)
+
 # ----------------------------
 # Meraki Dashboard API client
 # ----------------------------
@@ -43,9 +51,13 @@ def push_l3():
             NETWORK_ID,
             rules=l3_rules
         )
-        print("L3 rules updated.")
+        print(" L3 rules updated successfully:", response)
+    except meraki.APIError as e:
+        print(f" L3 update failed: {e.status} {e.reason}")
+        print(f"   Details: {e.message}")
     except Exception as e:
-        print(f" Error updating L3 rules: {e}")
+        print(f" Unexpected error (L3): {e}")
+
 
 # ----------------------------
 # Push L7 rules
@@ -57,14 +69,9 @@ def push_l7():
             NETWORK_ID,
             rules=l7_rules
         )
-        print("L7 rules updated.")
+        print(" L7 rules updated successfully:", response)
+    except meraki.APIError as e:
+        print(f" L7 update failed: {e.status} {e.reason}")
+        print(f"   Details: {e.message}")
     except Exception as e:
-        print(f" Error updating L7 rules: {e}")
-
-# ----------------------------
-# Main
-# ----------------------------
-if __name__ == "__main__":
-    push_l3()
-    push_l7()
-    print("Firewall policies applied successfully!")
+        print(f" Unexpected error (L7): {e}")

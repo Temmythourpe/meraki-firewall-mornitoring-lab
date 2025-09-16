@@ -1,0 +1,18 @@
+[
+  {
+    "networkId": "L_123456789",
+    "deviceSerial": "Q2XX-XXXX-XXXX",
+    "eventType": "securityEvent",
+    "severity": "high",
+    "occurredAt": "2025-09-16T12:00:00Z",
+    "message": "Blocked peer-to-peer traffic from 10.0.0.5"
+  },
+  {
+    "networkId": "L_123456789",
+    "deviceSerial": "Q2XX-XXXX-XXXX",
+    "eventType": "contentFilteringEvent",
+    "severity": "medium",
+    "occurredAt": "2025-09-16T12:05:00Z",
+    "message": "Blocked access to adult content"
+  }
+]
