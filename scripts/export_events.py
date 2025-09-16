@@ -8,9 +8,9 @@ import meraki
 import os
 import sys
 import json
-import pandas as pd
-from datetime import datetime, timedelta
 
+from datetime import datetime, timedelta
+from dotenv import load_dotenv 
 # ----------------------------
 # Load API key & network ID
 # ----------------------------

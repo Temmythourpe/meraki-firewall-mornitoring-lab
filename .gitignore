@@ -4,3 +4,6 @@ __pycache__/
 
 # Ignore secrets
 .env
+
+# Ignore webhook events
+.webhook_events.log

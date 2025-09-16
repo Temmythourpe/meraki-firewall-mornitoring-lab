@@ -1,0 +1,94 @@
+{
+  "info": {
+    "name": "Meraki Lab",
+    "_postman_id": "a1b2c3d4-e5f6-7890-abcd-1234567890ef",
+    "description": "Postman collection for Cisco Meraki Firewall & Monitoring Lab",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "List Organizations",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-Cisco-Meraki-API-Key",
+            "value": "d1649a0d0e86a14b0b8b48f89bd2400ed6893a63"
+          }
+        ],
+        "url": {
+          "raw": "https://api.meraki.com/api/v1/organizations",
+          "protocol": "https",
+          "host": ["api", "meraki", "com"],
+          "path": ["api", "v1", "organizations"]
+        }
+      }
+    },
+    {
+      "name": "List Networks",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-Cisco-Meraki-API-Key",
+            "value": "d1649a0d0e86a14b0b8b48f89bd2400ed6893a63"
+          }
+        ],
+        "url": {
+          "raw": "https://api.meraki.com/api/v1/organizations/549236/networks",
+          "protocol": "https",
+          "host": ["api", "meraki", "com"],
+          "path": ["api", "v1", "organizations", "549236", "networks"]
+        }
+      }
+    },
+    {
+      "name": "Push L3 Firewall Rules",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "X-Cisco-Meraki-API-Key",
+            "value": "d1649a0d0e86a14b0b8b48f89bd2400ed6893a63"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"rules\": [\n    {\n      \"comment\": \"Allow HTTP\",\n      \"policy\": \"allow\",\n      \"protocol\": \"tcp\",\n      \"srcCidr\": \"any\",\n      \"destCidr\": \"any\",\n      \"destPort\": \"80\"\n    },\n    {\n      \"comment\": \"Allow HTTPS\",\n      \"policy\": \"allow\",\n      \"protocol\": \"tcp\",\n      \"srcCidr\": \"any\",\n      \"destCidr\": \"any\",\n      \"destPort\": \"443\"\n    }\n  ]\n}"
+        },
+        "url": {
+          "raw": "https://api.meraki.com/api/v1/networks/L_646829496481105433/appliance/firewall/l3FirewallRules",
+          "protocol": "https",
+          "host": ["api", "meraki", "com"],
+          "path": ["api", "v1", "networks", "L_646829496481105433", "appliance", "firewall", "l3FirewallRules"]
+        }
+      }
+    },
+    {
+      "name": "Send Sample Webhook Event",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"eventType\": \"testEvent\",\n  \"message\": \"This is a test webhook\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:5000/meraki/webhook",
+          "host": ["127.0.0.1"],
+          "path": ["5000", "meraki", "webhook"]
+        }
+      }
+    }
+  ],
+  "variable": []
+}
