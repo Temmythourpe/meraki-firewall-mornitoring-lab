@@ -93,3 +93,6 @@ Firewall write operations return 403 Forbidden (L3 & L7).
 Content Filtering API endpoints are unavailable (would return 404).
 
 These limitations are expected and noted as part of the project.
+
+## Conclusion ##
+I designed the project around a standard enterprise topology, featuring a LAN, Guest Wi-Fi, and DMZ, all protected behind a Meraki MX firewall. While the DevNet Sandbox didn’t allow me to spin up the real VLANs, I still implemented the policies as if those networks existed. That demonstrates my ability to map real-world network diagrams to API-driven automation workflows. Moreover, I utilized Postman as both a testing platform and a proof-of-concept for automation with Cisco Meraki. Instead of manually configuring firewalls in the dashboard, I leveraged the Meraki API via Postman to fetch organizations, list networks, and push firewall rules. This demonstrated how I can replace repetitive manual work with API-driven automation, which I believe is exactly what companies need for scale, consistency, and integration with tools like SIEM or SOAR.
