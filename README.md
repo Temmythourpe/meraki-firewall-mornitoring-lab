@@ -64,7 +64,7 @@ In a real Meraki environment (or in a Reserved Sandbox), the same automation wou
 - Scripts demonstrate automation and policy-as-code workflow
 - Offline replay demonstrates monitoring functionality without live Meraki resources.
 
-## *Postman Workflow*
+## Postman Workflow
 
 The Postman collection demonstrates a realistic automation workflow:
 
